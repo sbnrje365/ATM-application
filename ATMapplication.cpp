@@ -6,7 +6,7 @@ void showMenu()
     cout << "****** MENU ******" << endl;
     cout << "1. Check Balance" << endl;
     cout << "2. Deposite Amount" << endl;
-    cout << "3. Withdrawl Amount" << endl;
+    cout << "3. Withdrawal Amount" << endl;
     cout << "0. Exit" << endl;
     cout << "******************" << endl;
 }
@@ -14,7 +14,11 @@ void showMenu()
 int main()
 {
     int option;
-    double balance = 0;
+    cout << "Add amount: Rs. ";
+
+    double balance;
+    cin >> balance;
+    cout << endl;
     do
     {
         showMenu();
@@ -24,7 +28,8 @@ int main()
         switch (option)
         {
         case 1:
-            cout << "Current Balance is: Rs. " << balance << endl;
+            cout << "> Current Balance is: Rs. " << balance << endl;
+            cout << endl;
             break;
 
         case 2:
@@ -32,15 +37,19 @@ int main()
             double depositeAmount;
             cin >> depositeAmount;
             balance += depositeAmount;
+            cout << "> Current balance: Rs. " << balance << endl;
+            cout << endl;
             break;
 
         case 3:
             cout << "Withdrawl Amount: Rs. ";
-            double withdralAmount;
-            cin >> withdralAmount;
+            double withdrawalAmount;
+            cin >> withdrawalAmount;
             if (withdralAmount < balance)
             {
-                balance -= withdralAmount;
+                balance -= withdrawalAmount;
+                cout << "> Current balance: Rs. " << balance << endl;
+                cout << endl;
             }
             else
             {
@@ -48,7 +57,8 @@ int main()
                 break;
             }
         }
-    } while (option != 0);
+    } 
+    while (option != 0);
     
     return 0;
 }
