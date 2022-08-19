@@ -42,10 +42,10 @@ int main()
             break;
 
         case 3:
-            cout << "Withdrawl Amount: Rs. ";
+            cout << "Withdrawal Amount: Rs. ";
             double withdrawalAmount;
             cin >> withdrawalAmount;
-            if (withdralAmount < balance)
+            if (withdrawalAmount < balance)
             {
                 balance -= withdrawalAmount;
                 cout << "> Current balance: Rs. " << balance << endl;
